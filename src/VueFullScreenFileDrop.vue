@@ -50,6 +50,8 @@ export default {
     onDrop(e) {
       e.preventDefault();
       this.visible = false;
+      // For fix bug with deletes email
+      e.dataTransfer.dropEffect = 'copy';
 
       const files = e.dataTransfer.files;
       const formData = this.getFormData(files);
