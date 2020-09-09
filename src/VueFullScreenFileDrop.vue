@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     onDragEnter(e) {
+      e.dataTransfer.dropEffect = "copy";
       this.lastTarget = e.target;
       this.visible = true;
     },
@@ -45,6 +46,7 @@ export default {
       }
     },
     onDragOver(e) {
+      e.dataTransfer.dropEffect = "copy";
       e.preventDefault();
     },
     onDrop(e) {
